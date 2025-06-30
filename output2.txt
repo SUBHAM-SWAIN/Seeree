@@ -1,0 +1,2 @@
+This is an asynchronous write operation.
+This is an appended line.
