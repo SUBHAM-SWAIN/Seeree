@@ -163,36 +163,69 @@
 //   }
 // });
 
+// const fs = require("fs");
+// const readline = require("readline");
+
+// let mainBalance = parseInt(fs.readFileSync("balance.txt", "utf8"));
+
+// console.log(`Your current balance is ${mainBalance}`);
+
+// const r1 = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+
+// r1.question("Enter the amount ", (amount) => {
+//   amount = parseInt(amount);
+//   r1.question("Enter Process (d for deposit, w for withdraw): ", (process) => {
+//     process = process.toLowerCase();
+//     if (process === "d") {
+//       mainBalance += amount;
+//     } else if (process === "w") {
+//       if (amount > mainBalance) {
+//         console.log("Insufficient balance");
+//       } else {
+//         mainBalance -= amount;
+//       }
+//     } else {
+//       console.log("Invalid process");
+//     }
+//     fs.writeFileSync("balance.txt", mainBalance.toString());
+//     console.log(`Your new balance is ${mainBalance}`);
+
+//     r1.close();
+//   });
+// });
+
 const fs = require("fs");
+const { stdin, stdout } = require("process");
 const readline = require("readline");
 
-let mainBalance = parseInt(fs.readFileSync("balance.txt", "utf8"));
-
+let mainBalance = parseInt(fs.readFileSync("balance.txt", "utf-8"));
 console.log(`Your current balance is ${mainBalance}`);
 
-const r1 = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+let r1 = readline.createInterface({
+  input: stdin,
+  output: stdout,
 });
 
-r1.question("Enter the amount ", (amount) => {
-  amount = parseInt(amount);
-  r1.question("Enter Process (d for deposit, w for withdraw): ", (process) => {
+r1.question("Enter Amount", (amount) => {
+  amount = parseInt(amount)
+  r1.question("Enter Process (d for deposite , w for withdraw)", (process) => {
     process = process.toLowerCase();
-    if (process === "d") {
+    if (process == "d") {
       mainBalance += amount;
-    } else if (process === "w") {
+    } else if (process == "w") {
       if (amount > mainBalance) {
-        console.log("Insufficient balance");
+        console.log("insufficient balance");
       } else {
         mainBalance -= amount;
       }
     } else {
-      console.log("Invalid process");
+      console.log("Enter Valid Process");
     }
+    console.log(`Remaining Balance is ${mainBalance}`);
     fs.writeFileSync("balance.txt", mainBalance.toString());
-    console.log(`Your new balance is ${mainBalance}`);
-
     r1.close();
   });
 });
