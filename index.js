@@ -210,7 +210,7 @@ let r1 = readline.createInterface({
 });
 
 r1.question("Enter Amount", (amount) => {
-  amount = parseInt(amount)
+  amount = parseInt(amount);
   r1.question("Enter Process (d for deposite , w for withdraw)", (process) => {
     process = process.toLowerCase();
     if (process == "d") {
