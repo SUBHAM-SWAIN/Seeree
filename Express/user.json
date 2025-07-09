@@ -1,37 +1,51 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Subham Swain",
     "email": "subham@example.com",
-    "age": 25,
+    "age": "25",
     "phone": "9876543210"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Aarav Mehta",
     "email": "aarav@example.com",
-    "age": 28,
+    "age": "28",
     "phone": "9123456780"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Priya Sharma",
     "email": "priya@example.com",
-    "age": 24,
+    "age": "24",
     "phone": "9988776655"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Rohan Gupta",
     "email": "rohan@example.com",
-    "age": 30,
+    "age": "30",
     "phone": "9876541230"
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Ananya Verma",
     "email": "ananya@example.com",
-    "age": 26,
+    "age": "26",
     "phone": "9012345678"
+  },
+  {
+    "name": "subham",
+    "id": "6",
+    "age": "21",
+    "email": "subha@gamil.com",
+    "phone": "7978010840"
+  },
+  {
+    "name": "bagha",
+    "id": "7",
+    "age": "22",
+    "email": "bagha@gamil.com",
+    "phone": "7444410840"
   }
 ]
