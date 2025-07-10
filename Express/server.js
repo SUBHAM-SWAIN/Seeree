@@ -42,6 +42,27 @@ app.post("/createUser", (req, res) => {
   }
 });
 
+app.put("/updateUser/:id", (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  const userIndex = user.findIndex((user) => user.id == id);
+
+  user[userIndex] = { ...user[userIndex], ...body };
+  fs.writeFileSync("./user.json", JSON.stringify(user, null, 2));
+  return res.json({
+    message: "User updated successfully",
+  });
+});
+
+app.delete("/deleteUser/:id", (req, res) => {
+  const id = req.params.id;
+  const Index = user.findIndex((user) => user.id == id);
+
+  user.splice(Index, 1);
+  fs.writeFileSync("user.json", JSON.stringify(user, null, 2));
+  return res.json({ message: "User deleted successfully" });
+});
+
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
